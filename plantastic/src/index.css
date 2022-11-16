@@ -12,3 +12,78 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.flip-card {
+  position: absolute;
+  background-color: transparent;
+  width: 400px;
+  height: 500px;
+  perspective: 1000px;
+  align-content: center;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front, .flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  border-radius: 5%;
+}
+
+.flip-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-back {
+  background-color: white;
+  color: #276749;
+  transform: rotateY(180deg);
+  text-align: left;
+}
+
+.flip-image {
+  object-fit: cover;
+  border-radius: 5%;
+}
+
+.plant-title {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: large;
+  padding: 10px;
+}
+
+.plant-header {
+  padding-left: 15px;
+  font-weight: bold;
+}
+
+.plant-data {
+  padding-left: 25px;
+}
+
+.image-name {
+  color: white;
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: large;
+}

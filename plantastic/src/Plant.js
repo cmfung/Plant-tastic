@@ -6,29 +6,32 @@ import {
 
 function PlantCard({ plant }) {
   return (
-    <Box flexGrow='1' alignSelf='center' align='center'>
-      <Box borderWidth='1px' maxW='500px' borderRadius='3%'>
-        <Image
-          src='https://silverbirchgardens.co.uk/wp-content/uploads/2021/08/tropical.jpg'
-          />
-        <Box align='left' p='5px'>
-          <Box fontWeight='bold' textTransform='uppercase'>{plant.common[1] ? plant.common[1] : plant.common[0]}</Box>
-          <Box fontWeight='bold' textTransform='uppercase'>Latin Name:</Box>
-          <Box pl='15px'>{plant.latin}</Box>
-          <Box fontWeight='bold' textTransform='uppercase'>Family:</Box>
-          <Box pl='15px'>{plant.family}</Box>
-          <Box fontWeight='bold' textTransform='uppercase'>Category:</Box>
-          <Box pl='15px'>{plant.category}</Box>
-          <Box fontWeight='bold' textTransform='uppercase'>Origin:</Box>
-          <Box pl='15px'>{plant.origin}</Box>
-          <Box fontWeight='bold' textTransform='uppercase'>Temperature Range:</Box>
-          <Box pl='15px'>{plant.tempmin.fahrenheit}-{plant.tempmax.fahrenheit} &#8457;</Box>
-          <Box fontWeight='bold' textTransform='uppercase'>Ideal Light:</Box>
-          <Box pl='15px'>{plant.ideallight}</Box>
-          <Box fontWeight='bold' textTransform='uppercase'>Watering Instructions:</Box>
-          <Box pl='15px'>{plant.watering}</Box>
-        </Box>
-      </Box>
+    <Box flexGrow='1' >
+      <div class='flip-card'>
+        <div class='flip-inner'>
+          <div class='flip-front'>
+            <img class='flip-image' src='https://wallpaperaccess.com/full/1464300.jpg' alt='plant'/>
+            <div class='image-name'>{plant.common[1] ? plant.common[1] : plant.common[0]}</div>
+          </div>
+          <div class='flip-back'>
+            <div class='plant-title'>{plant.common[1] ? plant.common[1] : plant.common[0]}</div>
+            <div class='plant-header'>Latin Name:</div>
+            <div class='plant-data'>{plant.latin}</div>
+            <div class='plant-header'>Family:</div>
+            <div class='plant-data'>{plant.family}</div>
+            <div class='plant-header'>Category:</div>
+            <div class='plant-data'>{plant.category}</div>
+            <div class='plant-header'>Origin:</div>
+            <div class='plant-data'>{plant.origin}</div>
+            <div class='plant-header'>Temperature Range:</div>
+            <div class='plant-data'>{plant.tempmin.fahrenheit}-{plant.tempmax.fahrenheit} &#8457;</div>
+            <div class='plant-header'>Ideal Light:</div>
+            <div class='plant-data'>{plant.ideallight}</div>
+            <div class='plant-header'>Watering Instructions:</div>
+            <div class='plant-data'>{plant.watering}</div>
+          </div>.
+        </div>
+      </div>
     </Box>
   )
 }
