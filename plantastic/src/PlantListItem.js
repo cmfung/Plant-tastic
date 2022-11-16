@@ -6,7 +6,6 @@ function PlantListItem({ setPlant, plant }) {
     console.log(plant)
     axios.get(`/plant/${plant}`)
       .then((response) => {
-        console.log(response.data[0]);
         setPlant(response.data[0]);
       })
       .catch((err) => console.log(err))
