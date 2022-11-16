@@ -10,18 +10,21 @@ axios.defaults.baseURL = "http://localhost:4000";
 function App() {
   const [plant, setPlant] = useState('');
 
-  // useEffect(() => {
-  //   axios.get('/plants/threadagave')
-  //     .then((response) => console.log(response.data))
-  //     .catch((err) => console.log(err));
-  // }, []);
+  useEffect(() => {
+    axios.get('/plant/threadagave')
+      .then((response) => {
+        console.log(response.data);
+        setPlant(response.data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
   return (
-    <div>
+    <div id="App">
       <Navbar />
       <Flex>
-        <Sidebar />
-        <PlantCard />
+        <Sidebar setPlant={setPlant} />
+        <PlantCard plant={plant}/>
       </Flex>
     </div>
   );

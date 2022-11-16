@@ -1,10 +1,14 @@
-import { Flex } from '@chakra-ui/react';
+// import { Flex } from '@chakra-ui/react';
+import PlantList from './PlantList'
+import PlantListItem from './PlantListItem'
 
-function Sidebar() {
+function Sidebar({ setPlant }) {
   return (
-    <Flex>
-      SideBar
-    </Flex>
+    <div>
+      {PlantList.map((plant) => (
+        <PlantListItem setPlant={setPlant} plant={plant} key={plant} />
+      ))}
+    </div>
   )
 };
 

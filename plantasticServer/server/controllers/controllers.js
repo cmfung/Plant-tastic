@@ -1,4 +1,5 @@
 const axios = require('axios');
+const _ = require('underscore');
 
 module.exports = {
   getAll: (req, res) => {
@@ -45,8 +46,14 @@ module.exports = {
     axios.request(options)
       .then((response) => {
         response.data.forEach((plant) => {
-          commonNames = commonNames.concat(plant.common);
+          if (plant.common.length > 1) {
+            commonNames.push(plant.common[1]);
+          } else  {
+            commonNames.push(plant.common[0])
+            commonNames = _.uniq(commonNames);
+          }
         });
+
         res.send(commonNames);
       })
       .catch((err) => console.log(err));

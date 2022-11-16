@@ -7,6 +7,6 @@ function Navbar() {
       <Text color='FFFFFF' >Plantastic</Text>
     </Flex>
   )
-}
+};
 
 export default Navbar;
