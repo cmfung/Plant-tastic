@@ -8,6 +8,26 @@ const imageSchema = new Schema({
   img_url: { type: String, required: true }
 });
 
+const plants = new Schema({
+  id: { type: Number, required: true },
+  latin: { type: String },
+  family: { type: String },
+  common: { type: [String] },
+  category: { type: String },
+  origin: { type: String },
+  climate: { type: String },
+  tempmax: { type: {} },
+  tempmin: { type: {} },
+  ideallight: { type: String },
+  toleratedlight: { type: String },
+  watering: { type: String },
+  insects: { type: [String] },
+  diseases: { type: [String] },
+  use: { type: [String] }
+})
+
+const Plants = mongoose.model('Plants', plants);
+
 const userList = new Schema({
   user_name: { type: String, required: true },
   user_owned: { type: [String] },
@@ -16,4 +36,5 @@ const userList = new Schema({
 
 const UserOwned = mongoose.model('UserOwned', userList)
 
-module.exports = UserOwned;
+module.exports.Plants = Plants;
+module.exports.serOwned = UserOwned;

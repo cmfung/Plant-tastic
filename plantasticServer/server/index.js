@@ -17,5 +17,7 @@ app.get('/users', controllers.getAllUsers)
 app.post('/users', controllers.addNewUser);
 app.put('/users/owned', controllers.addToOwned);
 app.put('/users/wishlist', controllers.addToWishList);
+// app.get('/ripdata', controllers.ripToMongo);
+app.get('/dbPlants', controllers.getMongoPlants)
 
 app.listen(PORT, () => console.log(`Listening on Port ${PORT}`))
