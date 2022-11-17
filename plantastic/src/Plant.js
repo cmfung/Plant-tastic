@@ -6,7 +6,7 @@ import {
 
 function PlantCard({ plant }) {
   return (
-    <Box flexGrow='1' >
+    <div class='card-container'>
       <div class='flip-card'>
         <div class='flip-inner'>
           <div class='flip-front'>
@@ -29,10 +29,10 @@ function PlantCard({ plant }) {
             <div class='plant-data'>{plant.ideallight}</div>
             <div class='plant-header'>Watering Instructions:</div>
             <div class='plant-data'>{plant.watering}</div>
-          </div>.
+          </div>
         </div>
       </div>
-    </Box>
+    </div>
   )
 }
 
