@@ -3,9 +3,24 @@ import {
   Button,
   Spacer
 } from '@chakra-ui/react';
-
+import axios from 'axios';
+axios.defaults.baseURL = "http://localhost:4000";
 
 function PlantCard({ plant }) {
+  const addToOwned = () => {
+    const plantName = plant.common[1] ? plant.common[1] : plant.common[0];
+    axios.put(`/users/owned?user_name=cfung&plant_name=${plantName}`)
+      .then(() => console.log('Successful'))
+      .catch((err) => console.log(err));
+  }
+
+  const addToWishList = () => {
+    const plantName = plant.common[1] ? plant.common[1] : plant.common[0];
+    axios.put(`/users/wishlist?user_name=cfung&plant_name=${plantName}`)
+      .then(() => console.log('Successful'))
+      .catch((err) => console.log(err));
+  }
+
   return (
     <div class='card-container'>
       <div class='flip-card'>
@@ -31,9 +46,9 @@ function PlantCard({ plant }) {
             <div class='plant-header'>Watering Instructions:</div>
             <div class='plant-data'>{plant.watering}</div>
             <Flex>
-              <Button mt='15px' ml='25px' bg='#276749' color='white'>Add to Owned</Button>
+              <Button mt='15px' ml='25px' bg='#276749' color='white' onClick={() => {addToOwned()}}>Add to Owned</Button>
               <Spacer />
-              <Button mt='15px' mr='25px' bg='#276749' color='white'>Add to Wishlist</Button>
+              <Button mt='15px' mr='25px' bg='#276749' color='white' onClick={() => {addToWishList()}}>Add to Wishlist</Button>
             </Flex>
           </div>
         </div>

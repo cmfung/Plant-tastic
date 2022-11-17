@@ -67,14 +67,14 @@ module.exports = {
       .catch((err) => console.log(err));
   },
   addToOwned: (req, res) => {
-    console.log(req.body);
-    models.addToOwned(req.body)
+    console.log('PARAMS', req.query);
+    models.addToOwned(req.query)
       .then(() => res.sendStatus(201))
       .catch((err) => console.log(err));
   },
   addToWishList: (req, res) => {
-    console.log(req.body);
-    models.addToWishList(req.body)
+    console.log(req.query);
+    models.addToWishList(req.query)
       .then(() => res.sendStatus(201))
       .catch((err) => console.log(err));
   }
