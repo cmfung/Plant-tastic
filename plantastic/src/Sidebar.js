@@ -4,7 +4,7 @@ import PlantListItem from './PlantListItem'
 
 function Sidebar({ setPlant }) {
   return (
-    <Box position='sticky' height='95vh' overflow='auto' width='200px' pl='5px' color='#276749'>
+    <Box position='sticky' height='95vh' overflow='auto' width='250px' pl='10px' bg='#36454F' color='white' fontSize='lg' >
       {PlantList.map((plant) => (
         <PlantListItem setPlant={setPlant} plant={plant} key={plant} />
       ))}

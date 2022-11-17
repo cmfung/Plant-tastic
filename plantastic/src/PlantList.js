@@ -168,4 +168,28 @@ const plantList = [
   "Palm lily"
 ]
 
+const plantCategories = [
+  "Hanging",
+  "Fern",
+  "Bromeliad",
+  "Cactus & Succulent",
+  "Aglaonema",
+  "Other",
+  "Flower",
+  "Foliage plant",
+  "Anthurium",
+  "Palm",
+  "Dieffenbachia",
+  "Dracaena",
+  "Ficus",
+  "Aralia",
+  "Philodendron",
+  "Grass",
+  "Topiairy",
+  "Sansevieria",
+  "Spathiphyllum",
+  "Schefflera"
+]
+
 export default plantList;
+// export default plantCategories;

@@ -13,5 +13,9 @@ app.use(express.json());
 app.get('/plants', controllers.getAll);
 app.get('/plantNames', controllers.getPlantNames);
 app.get('/plant/:plantName', controllers.getByName);
+app.get('/users', controllers.getAllUsers)
+app.post('/users', controllers.addNewUser);
+app.put('/users/owned', controllers.addToOwned);
+app.put('/users/wishlist', controllers.addToWishList);
 
 app.listen(PORT, () => console.log(`Listening on Port ${PORT}`))

@@ -1,6 +1,7 @@
 import {
-  Box,
-  Image
+  Flex,
+  Button,
+  Spacer
 } from '@chakra-ui/react';
 
 
@@ -29,6 +30,11 @@ function PlantCard({ plant }) {
             <div class='plant-data'>{plant.ideallight}</div>
             <div class='plant-header'>Watering Instructions:</div>
             <div class='plant-data'>{plant.watering}</div>
+            <Flex>
+              <Button mt='15px' ml='25px' bg='#276749' color='white'>Add to Owned</Button>
+              <Spacer />
+              <Button mt='15px' mr='25px' bg='#276749' color='white'>Add to Wishlist</Button>
+            </Flex>
           </div>
         </div>
       </div>

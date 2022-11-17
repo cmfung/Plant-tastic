@@ -8,6 +8,7 @@ import Sidebar from './Sidebar'
 axios.defaults.baseURL = "http://localhost:4000";
 
 function App() {
+  const [user, setUser] = useState('');
   const [plant, setPlant] = useState({
     "id": 6,
     "latin": "Agave filifera",
@@ -53,9 +54,9 @@ function App() {
 
   return (
     <ChakraProvider id='Set-cursor'>
-      <Navbar />
+      <Navbar user={user} setUser={setUser}/>
       <Flex>
-        <Sidebar setPlant={setPlant} />
+        <Sidebar setPlant={setPlant}/>
         <PlantCard plant={plant}/>
       </Flex>
     </ChakraProvider>

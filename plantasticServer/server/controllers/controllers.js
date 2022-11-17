@@ -1,4 +1,5 @@
 const axios = require('axios');
+const models = require('../models/models')
 const _ = require('underscore');
 
 module.exports = {
@@ -33,6 +34,7 @@ module.exports = {
       })
       .catch((err) => console.log(err));
   },
+  // can comment out not needed regularly. Just manipulating results to return specific arrays.
   getPlantNames: (req, res) => {
     let commonNames = [];
     const options = {
@@ -46,16 +48,34 @@ module.exports = {
     axios.request(options)
       .then((response) => {
         response.data.forEach((plant) => {
-          if (plant.common.length > 1) {
-            commonNames.push(plant.common[1]);
-          } else  {
-            commonNames.push(plant.common[0])
-            commonNames = _.uniq(commonNames);
-          }
+          commonNames.push(plant.category)
+          commonNames = _.uniq(commonNames);
         });
-
         res.send(commonNames);
       })
       .catch((err) => console.log(err));
   },
+  getAllUsers: (req, res) => {
+    models.getAll()
+      .then((data) => res.status(200).send(data))
+      .catch((err) => console.log(err));
+  },
+  addNewUser: (req, res) => {
+    console.log(req.body)
+    models.addNewUser(req.body)
+      .then(() => res.sendStatus(201))
+      .catch((err) => console.log(err));
+  },
+  addToOwned: (req, res) => {
+    console.log(req.body);
+    models.addToOwned(req.body)
+      .then(() => res.sendStatus(201))
+      .catch((err) => console.log(err));
+  },
+  addToWishList: (req, res) => {
+    console.log(req.body);
+    models.addToWishList(req.body)
+      .then(() => res.sendStatus(201))
+      .catch((err) => console.log(err));
+  }
 }
