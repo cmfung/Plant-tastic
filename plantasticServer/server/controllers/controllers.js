@@ -78,7 +78,7 @@ module.exports = {
       .then(() => res.sendStatus(201))
       .catch((err) => console.log(err));
   },
-  // write a route that rips everything from the api and then iterates over each value and adds it to the mongo database
+  // write a route that rips everything from the api and then iterates over each value and adds it to the mongo database - to increase response times for demo
   // ripToMongo: (req, res) => {
   //   const options = {
   //     method: 'GET',
